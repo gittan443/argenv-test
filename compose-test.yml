@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+      args: 
+        buildno: ${buildno}
+        tag: ${tag}
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
